@@ -41,3 +41,13 @@ $ php bin/hyperf.php start
 This will start the cli-server on port `9501`, and bind it to all network interfaces. You can then visit the site at `http://localhost:9501/`
 
 which will bring up Hyperf default home page.
+
+```
+docker run --name hyperf \
+-v ./:/data/project/hyperf-skeleton \
+-p 9501:9501 -it \
+--workdir /data/project/hyperf-skeleton -it --rm \
+--privileged -u root \
+--entrypoint /bin/sh \
+hyperf/hyperf:8.2-alpine-v3.18-swoole
+```
